@@ -4,6 +4,7 @@
  */
 package com.mycompany.proyectocategoria;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -43,6 +44,7 @@ public class Catalogo extends javax.swing.JFrame {
         jBeliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTtabla = new javax.swing.JTable();
+        jMenuBar1 = new javax.swing.JMenuBar();
 
         jLabel5.setText("jLabel5");
 
@@ -84,6 +86,8 @@ public class Catalogo extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(jTtabla);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,26 +151,37 @@ public class Catalogo extends javax.swing.JFrame {
     private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
         // TODO add your handling code here:
         
-        String jBelimina="true";
-        boolean eliminar;
-        int filaselecionada =jTtabla.getSelectedRow();
-        
-        if (jBelimina.equalsIgnoreCase("true")) {
-           
-            modelo.removeRow(filaselecionada);
-            
-        } 
-          
+
+            String jBelimina = "true";
+            boolean eliminar;
+            int filaselecionada = jTtabla.getSelectedRow();
+
+            if (jBelimina.equalsIgnoreCase("true")) {
+
+                modelo.removeRow(filaselecionada);
+
+            }
+
+
+
+
     }//GEN-LAST:event_jBeliminarActionPerformed
 
     private void jBbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbotonActionPerformed
         // TODO add your handling code here:
         
-        String categoria = (String)jCcategoria.getSelectedItem();
-        String nombre= jTnombre.getText();
-        double precio= Double.parseDouble(jTprecio.getText());
+        try{
+      
+            String categoria = (String) jCcategoria.getSelectedItem();
+            String nombre = jTnombre.getText();
+            double precio = Double.parseDouble(jTprecio.getText());
+            modelo.addRow(new Object[]{categoria, nombre, precio});
+               
+        }catch(Exception a){
         
-        modelo.addRow(new Object[]{categoria,nombre,precio});
+         JOptionPane.showMessageDialog(this,"No se pudo agregar el producto");
+         
+        }
         
     }//GEN-LAST:event_jBbotonActionPerformed
 
@@ -214,6 +229,7 @@ public class Catalogo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTnombre;
     private javax.swing.JTextField jTprecio;
