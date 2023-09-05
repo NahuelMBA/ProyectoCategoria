@@ -151,9 +151,7 @@ public class Catalogo extends javax.swing.JFrame {
     private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
         // TODO add your handling code here:
         
-
             String jBelimina = "true";
-            boolean eliminar;
             int filaselecionada = jTtabla.getSelectedRow();
 
             if (jBelimina.equalsIgnoreCase("true")) {
@@ -161,9 +159,6 @@ public class Catalogo extends javax.swing.JFrame {
                 modelo.removeRow(filaselecionada);
 
             }
-
-
-
 
     }//GEN-LAST:event_jBeliminarActionPerformed
 
