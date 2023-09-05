@@ -52,7 +52,7 @@ public class Catalogo extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Supermercado Altamiranos");
+        jLabel1.setText("Supermercado");
 
         jLabel2.setText("Categoria");
 
